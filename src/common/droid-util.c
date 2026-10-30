@@ -1599,6 +1599,7 @@ pa_droid_stream *pa_droid_open_output_stream(pa_droid_hw_module *module,
     return stream;
 
 fail:
+    pa_droid_hw_module_unref(stream->module);
     pa_xfree(stream);
     pa_xfree(output);
 
